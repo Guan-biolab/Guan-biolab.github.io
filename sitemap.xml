@@ -1,72 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+         <loc>https://guan-biolab.github.io/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/news/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/people/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/publications/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://guan-biolab.github.io/book/main/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/00_assembly-methods/</loc>
+         <loc>https://guan-biolab.github.io/book/1.Raw_Data/01_database/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline/</loc>
+         <loc>https://guan-biolab.github.io/book/1.Raw_Data/02_get-data/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/02_quast/</loc>
+         <loc>https://guan-biolab.github.io/book/1.Raw_Data/03_entrez/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/03_bacteria-assembly/</loc>
+         <loc>https://guan-biolab.github.io/book/1.Raw_Data/04_blast/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/04_virus-assembly/</loc>
+         <loc>https://guan-biolab.github.io/book/1.Raw_Data/05_fastqc/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/05_gatk3/</loc>
+         <loc>https://guan-biolab.github.io/book/1.Raw_Data/06_multiqc/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/06_gatk4/</loc>
+         <loc>https://guan-biolab.github.io/book/1.Raw_Data/07_seqkit/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/07_flye/</loc>
+         <loc>https://guan-biolab.github.io/book/1.Raw_Data/08_trimmomatic/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/10_snap/</loc>
+         <loc>https://guan-biolab.github.io/book/2.To_Genome/01_bwa-samtools-pipeline/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/11_long-noisy-reads-assembly/</loc>
+         <loc>https://guan-biolab.github.io/book/2.To_Genome/02_bacteria-assembly/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/12_hybrid-assembly/</loc>
+         <loc>https://guan-biolab.github.io/book/3.Genome_Annotation/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/14_bwa-long-sequence-mapping/</loc>
+         <loc>https://guan-biolab.github.io/book/3.Genome_Annotation/01_prokka/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/C02_Raw-Data-to-Genome/15_whatshap/</loc>
+         <loc>https://guan-biolab.github.io/book/3.Genome_Annotation/02_eggnog/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/3.Genome_Annotation/03_snpeff/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/4.Genome_Compare/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/4.Genome_Compare/01_mummer/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/4.Genome_Compare/02_mauve/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>

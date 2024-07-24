@@ -1,0 +1,1015 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="生信实验室/平台">
+      
+      
+        <meta name="author" content="sandy">
+      
+      
+        <link rel="canonical" href="https://guan-biolab.github.io/book/1.Raw_Data/04_blast/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>Blast 使用说明 - 吉大一生物信息学实验室</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#blast" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="吉大一生物信息学实验室" class="md-header__button md-logo" aria-label="吉大一生物信息学实验室" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            吉大一生物信息学实验室
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Blast 使用说明
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Guan-biolab/guan-biolab.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../people/" class="md-tabs__link">
+        
+  
+    
+  
+  People
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../publications/" class="md-tabs__link">
+        
+  
+    
+  
+  Publications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../news/" class="md-tabs__link">
+        
+  
+    
+  
+  News
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline.md" class="md-tabs__link">
+          
+  
+  Noot
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="吉大一生物信息学实验室" class="md-nav__button md-logo" aria-label="吉大一生物信息学实验室" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    吉大一生物信息学实验室
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Guan-biolab/guan-biolab.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    People
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../publications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Noot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Noot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第二章 组装与比对
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            第二章 组装与比对
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. 基本比对流程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/02_quast.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. Quast 验证
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/03_bacteria-assembly.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. 细菌基因组组装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/04_virus-assembly.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. 病毒基因组组装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/05_gatk3.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. GATK3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/06_gatk4.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. GATK4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-blast" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Blast 原理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-blast" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 在线 blast
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-local-blast" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 基于命令行的 Local Blast
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 基于命令行的 Local Blast">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-blast" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Blast
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-blast" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Blast+
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-blast-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 构建本地的 blast web 服务
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 构建本地的 blast web 服务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-blastkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 blastkit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="blast">Blast 使用说明<a class="headerlink" href="#blast" title="Permanent link">&para;</a></h1>
+<p>{{ git_page_authors }} 更新于: {{ git_revision_date }}</p>
+<hr />
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p>Blast 工具可以进行序列相似性比对，在 NGS 数据分析中经常会被使用到，特别是一些工具中需要 Blast 或 Blast+ 程序来作为第三方比对工具调用。拿到测序完成的草图后，因为基因组数据较大，连接NCBI网站往往又非常缓慢，所以要做 Blast 比对的话都需要做 Local Blast。这里介绍2个方式来实现：</p>
+<ol>
+<li>用命令行进行本地 Blast</li>
+<li>快速构建 Blast Web 服务</li>
+</ol>
+</div>
+<h2 id="1-blast">1. Blast 原理<a class="headerlink" href="#1-blast" title="Permanent link">&para;</a></h2>
+<h2 id="2-blast">2. 在线 blast<a class="headerlink" href="#2-blast" title="Permanent link">&para;</a></h2>
+<h2 id="3-local-blast">3. 基于命令行的 Local Blast<a class="headerlink" href="#3-local-blast" title="Permanent link">&para;</a></h2>
+<p><code>Blast</code> 和 <code>NCBI Blast</code> 是 NCBI 先后发布的序列比对工具。<code>**B**asic **L**ocal **A**lignment **S**earch **T**ool</code>工具最早公布与1989年，我们一般都称呼其为<code>Blast</code>。2009年 NCBI 为了克服<code>Blast</code>的不足之处，为以后开发方便，重写代码，新的<code>NCBI Blast</code>（也称其为<code>Blast+</code>）工具应运而生。新版<code>Blast</code>工具在速度上有了提升，在输入输出上也更为灵活。</p>
+<p><code>[Blast](ftp://ftp.ncbi.nlm.nih.gov/blast/)</code>工具最新版是2012年发布的**2.2.26**，目前已不再提供更新。<code>NCBI Blast</code>目前最新版为**2.9.0**。要区分2者也很简单，2个版本的程序运行方式不同：<code>Blast</code> 是通过 blastall -p 的方式调用子程序来比对搜索的，而<code>Blast+</code>则是直接使用blastn或blastp等子程序来比对搜索。另外前者用formatdb程序来格式化数据库，后者用makeblastdb程序来格式化数据。</p>
+<h3 id="31-blast">3.1 Blast<a class="headerlink" href="#31-blast" title="Permanent link">&para;</a></h3>
+<p><strong>Blast的下载与安装</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Ubuntu 中安装 blast</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>blast2
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 或者直接下载NCBI Linux预编译包，并解压缩安装</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>$<span class="w"> </span>wget<span class="w"> </span>ftp://ftp.ncbi.nih.gov/blast/executables/release/2.2.26/blast-2.2.26-x64-linux.tar.gz
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>$<span class="w"> </span>tar<span class="w"> </span>-zxvf<span class="w"> </span>blast-2.2.26-x64<span class="w"> </span>-C<span class="w"> </span>~/app
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 在系统可执行路径中添加 blast 链接</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>$<span class="w"> </span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>~/app/blast-2.2.26-x64/blastall<span class="w"> </span>/usr/local/sbin
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># 通过 conda 安装 blast</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="o">(</span>blast<span class="o">)</span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>blast-legacy
+</span></code></pre></div>
+<p><strong>运行 Blast</strong></p>
+<p><code>Blast</code>通过调用 blastall 程序来调用不同子程序实现不同类型序列比对。在命令行中输入<code>blastall</code>，会打印出一份参数列表。你也可以使用<code>man blast</code>来查看<code>Blast</code>工具的用户手册。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 运行主命令</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>blastall
+</span></code></pre></div>
+<p><strong>参数说明：</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>-p:<span class="w"> </span>指定要运行的<span class="w"> </span>blast<span class="w"> </span>程序。可以调用的有:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sb">`</span>blastp<span class="sb">`</span><span class="w">             </span>将氨基酸序列与蛋白质数据库比对
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="sb">`</span>blastn<span class="sb">`</span><span class="w">             </span>将核酸序列与核酸数据库比对
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="sb">`</span>blastx<span class="sb">`</span><span class="w">             </span>将核酸序列翻译成蛋白序列后与非冗余<span class="o">(</span>nr<span class="o">)</span>蛋白质数据库比对
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="sb">`</span>psitblastn<span class="sb">`</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="sb">`</span>tblastn<span class="sb">`</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="sb">`</span>tblastx<span class="sb">`</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>-d:<span class="w"> </span>指定要调用数据库，默认值是非冗余<span class="o">(</span>nr<span class="o">)</span>数据库。本地<span class="w"> </span>Blast<span class="w"> </span>比对一般来说都是调用<span class="w"> </span>formatdb<span class="w"> </span>格式化的数据库。
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>-i:<span class="w"> </span>输入，默认值是终端输入，也可以使用文件的方式，比如<span class="sb">`</span>-i<span class="w"> </span>seq.fasta<span class="sb">`</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>-o:<span class="w"> </span>输出，默认值是终端打印输出，也可以使用文件的方式，比如<span class="sb">`</span>-o<span class="w"> </span>result.txt<span class="sb">`</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>-e:<span class="w"> </span>期望值。
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>-T:<span class="w"> </span>输出文件格式，默认值为F<span class="o">(</span>False<span class="o">)</span>，想输出HTML格式的可以用<span class="sb">`</span>-T<span class="w"> </span>T<span class="sb">`</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>-M:<span class="w"> </span>矩阵算法选择，默认值是<span class="sb">`</span>BLOSUM62<span class="sb">`</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>-n:<span class="w"> </span>如果想使用MegaBlast，就设置<span class="sb">`</span>-n<span class="w"> </span>T<span class="sb">`</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>-b:<span class="w"> </span>数据库中的比对结果显示条目数，默认是250条记录。
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>-m:<span class="w"> </span>比对结果的输出显示方式，值为0~11，默认是0。各个数字含义见下表。
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>pairwise</td>
+</tr>
+<tr>
+<td>1</td>
+<td>query-anchored showing identities</td>
+</tr>
+<tr>
+<td>2</td>
+<td>query-anchored no identities</td>
+</tr>
+<tr>
+<td>3</td>
+<td>flat query-anchored, show identities</td>
+</tr>
+<tr>
+<td>4</td>
+<td>flat query-anchored, no identities</td>
+</tr>
+<tr>
+<td>5</td>
+<td>query-anchored no identities and blunt ends</td>
+</tr>
+<tr>
+<td>6</td>
+<td>flat query-anchored, no identities and blunt ends</td>
+</tr>
+<tr>
+<td>7</td>
+<td>XML Blast output</td>
+</tr>
+<tr>
+<td>8</td>
+<td>tabular</td>
+</tr>
+<tr>
+<td>9</td>
+<td>tabular with comment lines</td>
+</tr>
+<tr>
+<td>10</td>
+<td>ASN, text</td>
+</tr>
+<tr>
+<td>11</td>
+<td>ASN, binary [Integer]</td>
+</tr>
+</tbody>
+</table>
+<p>其他参数参见<code>man blast</code>。</p>
+<p><strong>应用举例:</strong></p>
+<p>Local blast例子：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 使用 custom_genome.fasta 文件作为数据库</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># formatdb 格式化作为本地数据库</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$<span class="w"> </span>formatdb<span class="w"> </span>-i<span class="w"> </span>custom_genome.fasta<span class="w"> </span>-o<span class="w"> </span>T<span class="w"> </span>-p<span class="w"> </span>F
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 使用 blastn 对 myseq.fasta 序列进行比对</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>$<span class="w"> </span>blastall<span class="w"> </span>-i<span class="w"> </span>myseq.fasta<span class="w"> </span>-d<span class="w"> </span>custom_genome.fasta<span class="w"> </span>-p<span class="w"> </span>blastn
+</span></code></pre></div>
+<h3 id="32-blast">3.2 Blast+<a class="headerlink" href="#32-blast" title="Permanent link">&para;</a></h3>
+<p><strong>下载安装 NCBI Blast+</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Ubuntu 系统中安装 ncbi blast</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ncbi-blast+
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Archlinux 系统中安装 ncbi blast</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S
+</span></code></pre></div>
+<p><strong>构建数据库</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 将序列文件 data/database.fasta 格式化成数据库</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># 数据类型为核酸，则参数为 -dbtype nucl</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$<span class="w"> </span>makeblastdb<span class="w"> </span>-in<span class="w"> </span>data/database.fasta<span class="w"> </span>-dbtype<span class="w"> </span>nucl<span class="w"> </span>-parse_seqids
+</span></code></pre></div>
+<p><strong>运行 blast</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 使用 blastn 程序比对 myseq.fasta 序列。</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>blastn<span class="w"> </span>-query<span class="w"> </span>myseq.fasta<span class="w"> </span>-db<span class="w"> </span>data/database.fasta<span class="w"> </span>-out<span class="w"> </span>result.txt
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># 常用简单输出方式</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>$<span class="w"> </span>blastn<span class="w"> </span>-query<span class="w"> </span>myseq.fasta<span class="w"> </span>-db<span class="w"> </span>data/database.fasta<span class="w"> </span>-outfmt<span class="w"> </span><span class="m">6</span><span class="w"> </span>-out<span class="w"> </span>result.txt
+</span></code></pre></div>
+<p><a href="http://www.personal.psu.edu/iua1/courses/files/2014/lecture-12.pdf">http://www.personal.psu.edu/iua1/courses/files/2014/lecture-12.pdf</a></p>
+<h2 id="4-blast-web">4. 构建本地的 blast web 服务<a class="headerlink" href="#4-blast-web" title="Permanent link">&para;</a></h2>
+<h3 id="41-blastkit">4.1 blastkit<a class="headerlink" href="#41-blastkit" title="Permanent link">&para;</a></h3>
+<p>blastkit 是一个包含webserver等工具的blast工具集。</p>
+<p><strong>安装依赖包</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>blastkit
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>blastkit
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="o">(</span>blastkit<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pygr
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="o">(</span>blastkit<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>whoosh
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="o">(</span>blastkit<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/ctb/pygr-draw.git
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="o">(</span>blastkit<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/ged-lab/screed.git
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="o">(</span>blastkit<span class="o">)</span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>lighttpd
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="o">(</span>blastkit<span class="o">)</span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>blast-legacy
+</span></code></pre></div>
+<p><strong>对lighttpd webserver进行配置</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/etc/lighttpd/conf-enabled
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>sudo<span class="w"> </span>ln<span class="w"> </span>-fs<span class="w"> </span>../conf-available/10-cgi.conf<span class="w"> </span>./
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>$<span class="w"> </span>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;cgi.assign = ( &quot;.cgi&quot; =&gt; &quot;&quot; )&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="m">10</span>-cgi.conf
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>$<span class="w"> </span>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;index-file.names += ( &quot;index.cgi&quot; ) &#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="m">10</span>-cgi.conf
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>$<span class="w"> </span>sudo<span class="w"> </span>/etc/init.d/lighttpd<span class="w"> </span>restart
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">(</span>prokka<span class="o">)</span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>lighttpd
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">(</span>prokka<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/.conda/etc/lighttpd/conf-enabled
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>$<span class="w"> </span>sudo<span class="w"> </span>ln<span class="w"> </span>-fs<span class="w"> </span>../conf-available/10-cgi.conf<span class="w"> </span>./
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>$<span class="w"> </span>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;cgi.assign = ( &quot;.cgi&quot; =&gt; &quot;&quot; )&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="m">10</span>-cgi.conf
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>$<span class="w"> </span>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;index-file.names += ( &quot;index.cgi&quot; ) &#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="m">10</span>-cgi.conf
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>$<span class="w"> </span>lighttpd<span class="w"> </span>restart
+</span></code></pre></div>
+<p><strong>安装 blastkit</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># 克隆软件仓库 blastkit</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ctb/blastkit.git<span class="w"> </span>-b<span class="w"> </span>ec2
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>blastkit/www
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># 将www路径链接到 /var 中</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>$<span class="w"> </span>sudo<span class="w"> </span>ln<span class="w"> </span>-fs<span class="w"> </span><span class="nv">$PWD</span><span class="w"> </span>/var/www/blastkit
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># 建立临时文件存放目录</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>$<span class="w"> </span>mkdir<span class="w"> </span>files
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>$<span class="w"> </span>chmod<span class="w"> </span>a+rxwt<span class="w"> </span>files
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1">#</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/root
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="c1"># 运行检测脚本</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>$<span class="w"> </span>python<span class="w"> </span>./check.py
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="c1">#如果安装顺利，就会提示一切已经准备完毕。接下来要准备数据。</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="c1"># 将大肠埃希菌DNA序列文件contigs.fa复制到数据库目录下</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>$<span class="w"> </span>cp<span class="w"> </span>~/contigs.fa<span class="w"> </span>blastkit/db/db.fa
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="c1"># 使用 formatdb 格式化数据库</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>$<span class="w"> </span>formatdb<span class="w"> </span>-i<span class="w"> </span>db/db.fa<span class="w"> </span>-o<span class="w"> </span>T<span class="w"> </span>-p<span class="w"> </span>F
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="c1"># 建立索引</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>$<span class="w"> </span>python<span class="w"> </span>index-db.py<span class="w"> </span>db/db.fa
+</span></code></pre></div>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/ctb/blastkit.git">Blastkit</a></li>
+<li><a href="https://github.com/dib-lab/2013-caltech-workshop/blob/master/blastkit.txt">Caltech workshop</a></li>
+<li><a href="http://angus.readthedocs.io/en/2017/running-command-line-blast.html">Angus</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      
+        <script src="../../../assets/js/umlconvert.js"></script>
+      
+    
+  </body>
+</html>

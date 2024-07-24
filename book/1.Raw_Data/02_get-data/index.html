@@ -1,0 +1,996 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="生信实验室/平台">
+      
+      
+        <meta name="author" content="sandy">
+      
+      
+        <link rel="canonical" href="https://guan-biolab.github.io/book/1.Raw_Data/02_get-data/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>命令行下载公共数据库基因组数据 - 吉大一生物信息学实验室</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="吉大一生物信息学实验室" class="md-header__button md-logo" aria-label="吉大一生物信息学实验室" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            吉大一生物信息学实验室
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              命令行下载公共数据库基因组数据
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Guan-biolab/guan-biolab.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../people/" class="md-tabs__link">
+        
+  
+    
+  
+  People
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../publications/" class="md-tabs__link">
+        
+  
+    
+  
+  Publications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../news/" class="md-tabs__link">
+        
+  
+    
+  
+  News
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline.md" class="md-tabs__link">
+          
+  
+  Noot
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="吉大一生物信息学实验室" class="md-nav__button md-logo" aria-label="吉大一生物信息学实验室" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    吉大一生物信息学实验室
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Guan-biolab/guan-biolab.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    People
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../publications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Noot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Noot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第二章 组装与比对
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            第二章 组装与比对
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. 基本比对流程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/02_quast.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. Quast 验证
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/03_bacteria-assembly.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. 细菌基因组组装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/04_virus-assembly.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. 病毒基因组组装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/05_gatk3.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. GATK3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C02_Raw-Data-to-Genome/06_gatk4.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. GATK4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sra" class="md-nav__link">
+    <span class="md-ellipsis">
+      SRA 数据下载
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SRA 数据下载">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-aspera-sra" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 用 Aspera 工具下载 SRA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2 ftp 下载
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-sratoolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 sratoolkit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 sratoolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-sratoolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 安装sratoolkit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-sra" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 下载 SRA 格式文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-fastq" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.3 并转换成 .fastq 格式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-sepe" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.4 SE/PE 文件判断
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.4 SE/PE 文件判断">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#225-entrez" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.5 利用entrez批量下载
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Assembly 数据库
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 上传数据
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">命令行下载公共数据库基因组数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>{{ git_page_authors }} 更新于: {{ git_revision_date }}</p>
+<hr />
+<ul>
+<li>SRA</li>
+<li>Assembly</li>
+</ul>
+<h2 id="sra">SRA 数据下载<a class="headerlink" href="#sra" title="Permanent link">&para;</a></h2>
+<p>这些公共数据库的数据可以通过不同方式下载，如https、ftp，或者使用aspera这个工具进行高速下载。</p>
+<h3 id="121-aspera-sra">1.2.1 用 Aspera 工具下载 SRA<a class="headerlink" href="#121-aspera-sra" title="Permanent link">&para;</a></h3>
+<p><strong>Aspera 介绍</strong></p>
+<p><a href="http://asperasoft.com">Aspera</a> 是 IBM 开发的加速在线数据传输的一组服务器端与客户端的应用程序。<a href="http://asperasoft.com">Aspera</a> 的各个工具可以在 <a href="http://downloads.asperasoft.com/downloads">官方网站</a> 下载获得。</p>
+<p>在服务器上我们只需要命令行工具 <code>ascp</code> 即可。而对于桌面用户来说，可以选择安装 <a href="http://downloads.asperasoft.com/en/downloads/8?list">Aspera Connent</a> 等工具。由于 Ascp Client 工具需要登录后才能下载，因此选择了 <a href="http://download.asperasoft.com/download/docs/connect/3.6.1/user_linux/webhelp/index.html#dita/introduction.html">Aspera Connect</a> 来安装。它是 <a href="http://asperasoft.com">Aspera</a> 用于浏览器下载的高效插件，其内嵌了 <code>ascp</code> 命令也可以直接在服务器上运行。安装了 <a href="http://download.asperasoft.com/download/docs/connect/3.6.1/user_linux/webhelp/index.html#dita/introduction.html">Aspera Connect</a> 的带图形界面的客户端，浏览器会在有 Connect, Faspex 或者 Shares 页面的链接处添加 ascp 下载快捷按钮。</p>
+<p><strong>安装 aspera connect</strong></p>
+<p><a href="http://download.asperasoft.com/download/docs/connect/3.6.1/user_linux/webhelp/index.html#dita/introduction.html">Aspera Connect</a> 下载解压缩后，可以看到一个 .sh 文件，执行后运行后会安装到当前用户 $HOME.aspera/connect 目录下。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 下载并解压缩程序</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$<span class="w"> </span>wget<span class="w"> </span>http://download.asperasoft.com/download/sw/connect/3.6.1/aspera-connect-3.6.1.110647-linux-64.tar.gz
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>$<span class="w"> </span>tar<span class="w"> </span>zxf<span class="w"> </span>asper-connect-3.6.1.110647-linux.tar.gz
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 安装到本地用户</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>$<span class="w"> </span>./aspera-connect-3.6.1.110647-linux-64.sh
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 添加用户执行路径</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;PATH=&quot;$PATH:$HOME/.aspera/connect/bin/&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span></code></pre></div>
+<p>对于喜欢使用客户端的桌面用户，也可以使用 <a href="http://downloads.asperasoft.com/en/downloads/2">Aspera Desktop Client</a> 客户端程序来下载数据。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/^INSTALL_DIR/INSTALL_DIR=~/envs/srst2/src/ascp/connect/&#39;</span><span class="w"> </span>aspera-connect-3.6.1.110647-linux-64.sh<span class="w"> </span>&gt;<span class="w"> </span>install.sh
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>./install.sh
+</span></code></pre></div>
+<p><strong>下载 SRA 数据</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>注意新版的<code>ascp</code>用<code>.openssh</code>作为密钥文件而不是原来的<code>.putty</code></p>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># ascp 下载 SRA 数据</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>ascp<span class="w"> </span>-i<span class="w"> </span>~/.aspera/connect/etc/asperaweb_id_dsa.openssh<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>&gt;<span class="w"> </span>--user<span class="o">=</span>anonftp<span class="w"> </span>--host<span class="o">=</span>ftp.ncbi.nlm.nih.gov<span class="w"> </span>--mode<span class="o">=</span>recv<span class="w"> </span>-l<span class="w"> </span>100m<span class="w"> </span>-pQTk1<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>&gt;<span class="w"> </span>/sra/sra-instant/reads/ByRun/sra/SRR/SRR955/SRR955386/SRR955386.sra<span class="w"> </span>.
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># 添加 alias 简化操作</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;alias ascp=&#39;ascp -i ~/.ascpera/connect/etc/asperaweb_id_dsa.openssh --user=dbtest --host=sra-download.ncbi.nlm.nih.gov --mode=recv -l 100m -pQTk1&#39;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># 测试下载</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>$<span class="w"> </span>ascp<span class="w"> </span>/data/sracloud/srapub/ERR579922<span class="w"> </span>./ERR578822.sra
+</span></code></pre></div>
+<h3 id="122-ftp">1.2.2 ftp 下载<a class="headerlink" href="#122-ftp" title="Permanent link">&para;</a></h3>
+<p>从国内公网访问 NCBI FTP 服务器往往是非常缓慢的，而 <a href="http://www.ebi.ac.uk">EBI</a> 就不同了，有些地方的速度很快，下载甚至可以超过 <a href="http://asperasoft.com">Aspera</a>。由于 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 和 <a href="http://www.ebi.ac.uk">EBI</a> 共享数据库，因此对于国内 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 下载缓慢或者无法用 ascp 的用户，可以考虑在 <a href="http://www.ebi.ac.uk">EBI</a> 下载数据。</p>
+<h2 id="22-sratoolkit">2.2 sratoolkit<a class="headerlink" href="#22-sratoolkit" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 开发了 <a href="(https://github.com/ncbi/sra-tools)">sratoolkit</a> 工具来帮助处理 SRA 数据，正确配置后可以很方便的下载 SRA 数据。</p>
+<h3 id="221-sratoolkit">2.2.1 安装sratoolkit<a class="headerlink" href="#221-sratoolkit" title="Permanent link">&para;</a></h3>
+<p>可以直接从 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 上下载。最新的源码可以在 <a href="https://github.com/ncbi/sra-tools">Github</a> 获得。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># download from NCBI</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/tmp
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$<span class="w"> </span>wget<span class="w"> </span>http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.5.6/sratoolkit.2.5.6-ubuntu64.tar.gz
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>$<span class="w"> </span>tar<span class="w"> </span>zxf<span class="w"> </span>sratoolkit.2.5.6-ubuntu64.tar.gz<span class="w"> </span>-C<span class="w"> </span>~/app
+</span></code></pre></div>
+<h3 id="222-sra">2.2.2 下载 SRA 格式文件<a class="headerlink" href="#222-sra" title="Permanent link">&para;</a></h3>
+<p>如果你安装并设置了 <a href="http://download.asperasoft.com/download/docs/connect/3.6.1/user_linux/webhelp/index.html#dita/introduction.html">Aspera Connect</a>，那么<code>prefetch</code>会优先使用<code>ascp</code>方式来下载，如果没有安装或则<code>ascp</code>下载失败，则切换成 HTTP 方式下载 sra 数据。另外<code>fastq-dump</code>命令也能从远端直接下载数据，加上<code>-X 1</code>参数，会预先下载最前的5个 reads，加上<code>-Z</code>参数，则会将这些 reads 打印到终端输出。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 下载 SRR955386.sra 到 你安装 sratoolkit 时配置的 public 目录中，默认是 ~/ncbi/public/sra</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>prefetch<span class="w"> </span>-v<span class="w"> </span>SRR955386
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># 下载 SRR955386.sra 到 你安装 sratoolkit 时配置的 public 目录中，默认是 ~/ncbi/public/sra，并且在终端输出5行 reads 数据。</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>$<span class="w"> </span>fastq-dump<span class="w"> </span>-X<span class="w"> </span><span class="m">5</span><span class="w"> </span>-Z<span class="w"> </span>SRR955386
+</span></code></pre></div>
+<h3 id="223-fastq">2.2.3 并转换成 .fastq 格式<a class="headerlink" href="#223-fastq" title="Permanent link">&para;</a></h3>
+<p>获得了 .sra 文件后，需要将其转换成 .fastq 格式的文件，用<code>fastq-dump</code>可以很方便的实现。转换之前要注意的是该 run 的 metadata 里，测序类型是 SE 还是 PE 的。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 将 sra 文件移动到 ~/data 目录中</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>mv<span class="w"> </span>~/.ncbi/public/sra/SRR955386.sra<span class="w"> </span>~/data
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># 如果是 SE 测序数据，直接运行以下命令</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>$<span class="w"> </span>fastq-dump<span class="w"> </span>SRR955386.sra
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># 如果是 PE 测序数据，则要添加参数：--split-files</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>$<span class="w"> </span>fastq-dump<span class="w"> </span>--split-files<span class="w"> </span>SRR955386.sra
+</span></code></pre></div>
+<h3 id="224-sepe">2.2.4 SE/PE 文件判断<a class="headerlink" href="#224-sepe" title="Permanent link">&para;</a></h3>
+<p>正常的 sra 文件的 metadata 应该包含测序采用的是 SE 还是 PE 的方式。但如果你不知道所下载的到底是 SE 还是 PE 格式的文件可以用<code>fastq-dump -X 1 --split-spot</code>的方法来判断。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># it&#39;s SE if nreads=1, and PE when nreads=2，统计整个文件，因此速度比较慢</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>sra-stat<span class="w"> </span>-xs<span class="w"> </span>SRR955386.sra<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;nreads&quot;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># 如果输出是4，那么就是SE，如果是8,则是PE</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>$<span class="w"> </span>fastq-dump<span class="w"> </span>-X<span class="w"> </span><span class="m">1</span><span class="w"> </span>--split-spot<span class="w"> </span>-Z<span class="w"> </span>SRR955386.sra<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># 或者加上参数让 fastq-dump 自己判断</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># 当 sra 文件是 SE 测序时，fastq-dump只能dump出1个 *_1.fastq 文件</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>$<span class="w"> </span>fastq-dump<span class="w"> </span>--split-files<span class="w"> </span>ERR493452.sra
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>$<span class="w"> </span>mv<span class="w"> </span>ERR493452_1.fastq<span class="w"> </span>ERR493452.fastq
+</span></code></pre></div>
+<p>当需要判断批量下载的 sra 文件时，区分那些是 PE 的那些是 SE 的文件，可以用以下脚本：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span> <span class="nn">os</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span> <span class="nn">subprocess</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">def</span> <span class="nf">check_SRA_type</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">fn</span><span class="p">);</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="n">contents</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s2">&quot;fastq-dump&quot;</span><span class="p">,</span> <span class="s2">&quot;-X&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;-Z&quot;</span><span class="p">,</span> <span class="s2">&quot;--split-spot&quot;</span><span class="p">,</span> <span class="n">fn</span><span class="p">]);</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Error running fastq-dump on&quot;</span><span class="p">,</span> <span class="n">fn</span><span class="p">);</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="c1"># -X 1 will output 4 lines if SE, and 8 lines if PE</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="k">if</span><span class="p">(</span><span class="n">contents</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        <span class="k">return</span> <span class="kc">False</span><span class="p">;</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="k">elif</span><span class="p">(</span><span class="n">contents</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">):</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        <span class="k">return</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unexpected output from fastq-dump on &quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">);</span>
+</span></code></pre></div>
+<h4 id="225-entrez">2.2.5 利用entrez批量下载<a class="headerlink" href="#225-entrez" title="Permanent link">&para;</a></h4>
+<p>如果想下载一个完整的 project 数据，可以利用 entrez-direct 工具。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 希望下载研究PRJNA40075项目的数据</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>esearch<span class="w"> </span>-db<span class="w"> </span>sra<span class="w"> </span>-query<span class="w"> </span>PRJNA40075<span class="w">  </span><span class="p">|</span><span class="w"> </span>efetch<span class="w"> </span>--format<span class="w"> </span>runinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>SRR<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>fastq-dump<span class="w"> </span>--split-files
+</span></code></pre></div>
+<p>如果想下载不同 research 的数据，可以自己建立一个 accession number list 的文件，比如利用 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 的 entrez 网页界面，导出所需要的数据 accession number，然后利用 <code>ascp</code> 下载。不过建议<code>ascp</code>下载不要太狠心，否则容易被 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 给封掉。</p>
+<h2 id="3-assembly">3. Assembly 数据库<a class="headerlink" href="#3-assembly" title="Permanent link">&para;</a></h2>
+<p>如果不需要研究 reads 数据，而是只想研究拼接的基因组数据，可以从 NCBI assembly 数据库去寻找数据，并通过 ascp/ftp 等工具下载。</p>
+<h2 id="4">4. 上传数据<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>SRA 上传测序结果可以参照 <a href="http://www.ncbi.nlm.nih.gov/books/NBK47529/">NCBI文档</a> 来实现。一般上传数据到NCBI SRA的过程需要6步：</p>
+<ol>
+<li>Create a BioProject for this research</li>
+<li>Create a BioSample submission for your biological sample(s)</li>
+<li>Gather Sequence Data Files</li>
+<li>Enter Metadata on SRA website
+  4.1 Create SRA submission
+  4.2 Create Experiment(s) and link to BioProject and BioSample
+  4.3 Create Run(s)</li>
+<li>Transfer Data files to SRA</li>
+<li>Update Submission with PubMed links, Release Date, or Metadata Changes</li>
+</ol>
+<p>需要注意的一点是，上传的过程中很多地方一旦保存或提交就不可以修改，尤其是各处的Alias。但是，可以联系NCBI的工作人员修改内容。NCBI的工作效率是很高的，一般不超过48小时，就可以得到确认，并拿到登录号。</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="http://www.ncbi.nlm.nih.gov/books/NBK47529/">NCBI上传数据文档</a></li>
+<li>熊筱晶, NCBI高通量测序数据库SRA介绍, 生命的化学[J], 2010:6, 959-963.</li>
+<li><a href="http://blog.sciencenet.cn/blog-656335-908140.html">http://blog.sciencenet.cn/blog-656335-908140.html</a></li>
+<li><a href="https://www.biostars.org/p/139422/">https://www.biostars.org/p/139422/</a></li>
+<li><a href="https://www.youtube.com/watch?v=NSIkUHKRPpo">https://www.youtube.com/watch?v=NSIkUHKRPpo</a></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      
+        <script src="../../../assets/js/umlconvert.js"></script>
+      
+    
+  </body>
+</html>
