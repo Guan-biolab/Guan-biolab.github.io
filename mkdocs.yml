@@ -29,13 +29,27 @@ nav:
 
   - 'Noot':
   
+- '第一章 常用工具':
+      - '01. 基因组公共数据库': book/1.Raw_Data/01_database.md
+      - '02. 下载基因组数据': book/1.Raw_Data/02_get-data.md
+      - '03. Entrez 工具': book/1.Raw_Data/03_entrez.md
+      - '04. Blast 比对': book/1.Raw_Data/04_blast.md
+      - '06. FastQC': book/1.Raw_Data/05_fastqc.md
+      - '06. Multiqc': book/1.Raw_Data/06_multiqc.md
+      - '07. SeqKit 工具': book/1.Raw_Data/07_seqkit.md
+      - '08. Trimmomatic 工具': book/1.Raw_Data/08_trimmomatic.md
     - '第二章 组装与比对':
-      - '01. 基本比对流程': book/C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline.md
-      - '02. Quast 验证': book/C02_Raw-Data-to-Genome/02_quast.md
-      - '03. 细菌基因组组装': book/C02_Raw-Data-to-Genome/03_bacteria-assembly.md
-      - '04. 病毒基因组组装': book/C02_Raw-Data-to-Genome/04_virus-assembly.md
-      - '05. GATK3': book/C02_Raw-Data-to-Genome/05_gatk3.md
-      - '06. GATK4': book/C02_Raw-Data-to-Genome/06_gatk4.md
+      - '01. 基本比对流程': book/2.To_Genome/01_bwa-samtools-pipeline.md
+      - '02. 细菌基因组组装': book/2.To_Genome/02_bacteria-assembly.md
+    - '第三章 基因组注释':
+      - '01. Prokka 快速注释': book/3.Genome_Annotation/01_prokka.md
+      - '02. Eggnog 注释': book/3.Genome_Annotation/02_eggnog.md
+      - '03. SNP注释工具 snpEFF': book/3.Genome_Annotation/03_snpeff.md
+
+    - '第四章 基因组比较':
+      - '01. mummer': book/4.Genome_Compare/01_mummer.md
+      - '02. mauve': book/4.Genome_Compare/02_mauve.md
+
 use_directory_urls: true
 
 extra_javascript:
