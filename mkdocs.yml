@@ -21,6 +21,10 @@ extra:
 extra_css:
   - assets/stylesheets/extra.css
 
+pages:
+- 首页: index.md
+- 测试: test.md
+
 nav:
   - '首页': index.md
   - '数据分析笔记':
