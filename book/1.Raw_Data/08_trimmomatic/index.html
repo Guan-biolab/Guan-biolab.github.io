@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://guan-biolab.github.io/book/1.Raw_Data/08_trimmomatic/">
       
       
+        <link rel="prev" href="../07_seqkit/">
+      
+      
+        <link rel="next" href="../../2.To_Genome/01_bwa-samtools-pipeline/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>二代数据的trim操作 - 吉大一生物信息学实验室</title>
+        <title>08. Trimmomatic 工具 - 吉大一生物信息学实验室</title>
       
     
     
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              二代数据的trim操作
+              08. Trimmomatic 工具
             
           </span>
         </div>
@@ -255,17 +259,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline.md" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01_database/" class="md-tabs__link">
           
   
   Noot
@@ -408,25 +416,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -437,12 +450,282 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Noot
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    第一章 常用工具
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            第一章 常用工具
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. 基因组公共数据库
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_get-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. 下载基因组数据
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_entrez/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. Entrez 工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_blast/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. Blast 比对
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_fastqc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. FastQC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_multiqc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. Multiqc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_seqkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. SeqKit 工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    08. Trimmomatic 工具
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    08. Trimmomatic 工具
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trimmomatic" class="md-nav__link">
+    <span class="md-ellipsis">
+      trimmomatic
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
             
               
                 
@@ -456,17 +739,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -477,8 +763,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             第二章 组装与比对
           </label>
@@ -491,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline.md" class="md-nav__link">
+      <a href="../../2.To_Genome/01_bwa-samtools-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -512,11 +798,83 @@
   
   
     <li class="md-nav__item">
-      <a href="../../C02_Raw-Data-to-Genome/02_quast.md" class="md-nav__link">
+      <a href="../../2.To_Genome/02_bacteria-assembly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    02. Quast 验证
+    02. 细菌基因组组装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    第三章 基因组注释
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            第三章 基因组注释
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.Genome_Annotation/01_prokka/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. Prokka 快速注释
   </span>
   
 
@@ -533,11 +891,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../C02_Raw-Data-to-Genome/03_bacteria-assembly.md" class="md-nav__link">
+      <a href="../../3.Genome_Annotation/02_eggnog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    03. 细菌基因组组装
+    02. Eggnog 注释
   </span>
   
 
@@ -554,11 +912,83 @@
   
   
     <li class="md-nav__item">
-      <a href="../../C02_Raw-Data-to-Genome/04_virus-assembly.md" class="md-nav__link">
+      <a href="../../3.Genome_Annotation/03_snpeff/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    04. 病毒基因组组装
+    03. SNP注释工具 snpEFF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    第四章 基因组比较
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            第四章 基因组比较
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4.Genome_Compare/01_mummer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. mummer
   </span>
   
 
@@ -575,32 +1005,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../C02_Raw-Data-to-Genome/05_gatk3.md" class="md-nav__link">
+      <a href="../../4.Genome_Compare/02_mauve/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    05. GATK3
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02_Raw-Data-to-Genome/06_gatk4.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    06. GATK4
+    02. mauve
   </span>
   
 
