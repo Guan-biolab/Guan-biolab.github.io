@@ -22,8 +22,12 @@ extra_css:
   - assets/stylesheets/extra.css
 
 nav:
-  - '首页': main.md
-  - '数据分析笔记':
+  - 'Home': index.md
+  - 'People': people.md
+  - 'Publications': publications.md
+  - 'News': news.md
+
+  - 'Noot':
   
     - '第二章 组装与比对':
       - '01. 基本比对流程': book/C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline.md
