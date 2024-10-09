@@ -111,12 +111,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/Database/Database_list/</loc>
+         <loc>https://guan-biolab.github.io/book/Database/01_Database_list/</loc>
          <lastmod>2024-10-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/Software/Software_list/</loc>
+         <loc>https://guan-biolab.github.io/book/Database/02_Database_questions/</loc>
+         <lastmod>2024-10-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/Software/01_Software_list/</loc>
+         <lastmod>2024-10-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/Software/02_Software_questions/</loc>
          <lastmod>2024-10-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
