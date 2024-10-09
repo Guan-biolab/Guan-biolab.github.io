@@ -15,10 +15,6 @@
         <link rel="canonical" href="https://guan-biolab.github.io/tutorial/Linux/04_awk/">
       
       
-        <link rel="prev" href="../03_linux-software/">
-      
-      
-        <link rel="next" href="../05_sed/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -26,7 +22,7 @@
     
     
       
-        <title>04. awk 列处理工具 - 吉大一生物信息学实验室</title>
+        <title>用 awk 处理 NGS 数据 - 吉大一生物信息学实验室</title>
       
     
     
@@ -112,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              04. awk 列处理工具
+              用 awk 处理 NGS 数据
             
           </span>
         </div>
@@ -277,24 +273,20 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../01_linux-installation/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../02_basic-cml/" class="md-tabs__link">
           
   
-  专项教程
+  Tutorial
 
         </a>
       </li>
@@ -1099,44 +1091,39 @@
       
   
   
-    
   
   
-  
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    专项教程
+    Tutorial
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            专项教程
+            Tutorial
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1144,30 +1131,25 @@
                 
   
   
-    
   
   
-  
     
     
     
       
       
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
         
           
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1178,7 +1160,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             Linux入门
@@ -1192,483 +1174,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_linux-installation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    01. Linux 安装示例
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../02_basic-cml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    02. Linux 基本命令
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03_linux-software/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    03. Linux 软件管理
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    04. awk 列处理工具
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    04. awk 列处理工具
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-awk" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. awk 命令构成
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-awk" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. awk 基本语法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. awk 基本语法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 Pattern
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 Pattern">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#211" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1.1 正则表达式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#212" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1.2 语句表达
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-action" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Action
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.2 Action">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#221-ifelse" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2.1 if...else
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#222-while" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2.2 while
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3. 内建变量
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.3. 内建变量">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#231-awk" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3.1 控制 awk 的变量
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#232" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3.2 传递信息的变量
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4. 内建函数
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.4. 内建函数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#241" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.1 数学函数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#242" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.2 字符串函数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#243" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.3 输入输出函数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#244" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.4 时间函数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#245-bit" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.5 Bit操作函数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#246" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.6 其他
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 示例
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 示例">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 对列的操作
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 对行的操作
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 格式化输出
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4 合并文件
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bioawk" class="md-nav__link">
-    <span class="md-ellipsis">
-      bioawk
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="bioawk">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 安装
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 使用示例
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. 使用示例">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fastq" class="md-nav__link">
-    <span class="md-ellipsis">
-      处理 fastq
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bam" class="md-nav__link">
-    <span class="md-ellipsis">
-      处理 bam
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vcf" class="md-nav__link">
-    <span class="md-ellipsis">
-      处理 vcf
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bed" class="md-nav__link">
-    <span class="md-ellipsis">
-      处理 bed
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gff" class="md-nav__link">
-    <span class="md-ellipsis">
-      处理 gff
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05_sed/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    05. sed 行处理工具
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06_tools/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    06. 其他命令行工具
+    01. Linux 基本命令
   </span>
   
 
@@ -1689,7 +1199,7 @@
         
   
   <span class="md-ellipsis">
-    07. vim
+    02. vim
   </span>
   
 
@@ -1719,20 +1229,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1778,53 +1285,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming/02_perl/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    02. Perl 编程
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Programming/03_python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    03. Python 编程
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Programming/04_biopython/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    04. Biopython 编程
+    02. Python 编程
   </span>
   
 
@@ -1845,7 +1310,28 @@
         
   
   <span class="md-ellipsis">
-    05. R 编程
+    03. R 编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/02_perl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. Perl 编程
   </span>
   
 
@@ -1875,20 +1361,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
