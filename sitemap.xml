@@ -96,17 +96,52 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/4.Genome_Compare/</loc>
+         <loc>https://guan-biolab.github.io/book/4.Genome-Visualization/</loc>
          <lastmod>2024-10-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/4.Genome_Compare/01_mummer/</loc>
+         <loc>https://guan-biolab.github.io/book/4.Genome-Visualization/01_igv/</loc>
          <lastmod>2024-10-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://guan-biolab.github.io/book/4.Genome_Compare/02_mauve/</loc>
+         <loc>https://guan-biolab.github.io/book/4.Genome-Visualization/02_brig/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/4.Genome-Visualization/03_circos/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/4.Genome-Visualization/03_clinker/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/4.Genome-Visualization/04_genoplotr/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/4.Genome-Visualization/05_easyfig/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/4.Genome-Visualization/06_circlize/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/4.Genome-Visualization/07_cgview/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/4.Genome-Visualization/08_gggenes/</loc>
          <lastmod>2024-10-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -117,6 +152,21 @@
     </url>
     <url>
          <loc>https://guan-biolab.github.io/book/Database/02_Database_questions/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/Genome_Compare/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/Genome_Compare/01_mummer/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guan-biolab.github.io/book/Genome_Compare/02_mauve/</loc>
          <lastmod>2024-10-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
