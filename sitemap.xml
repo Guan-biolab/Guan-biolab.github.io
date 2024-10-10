@@ -181,6 +181,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://guan-biolab.github.io/book/Software/parallel/</loc>
+         <lastmod>2024-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://guan-biolab.github.io/tutorial/CML-download/01_start/</loc>
          <lastmod>2024-10-10</lastmod>
          <changefreq>daily</changefreq>
