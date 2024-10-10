@@ -1,0 +1,131 @@
+site_name: 吉大一生物信息学实验室
+site_description: '生信实验室/平台'
+site_author: 'sandy'
+site_url: 'https://guan-biolab.github.io'
+theme:
+  name: 'material'
+  palette:
+    scheme: default
+    primary: 'indigo'
+  features:
+    - navigation.tabs
+    - navigation.sections
+#  custom_dir: overrides
+#copyright: 'Copyright &copy; 2016 - 2021 HZCDC@Lab'
+repo_url: https://github.com/Guan-biolab/guan-biolab.github.io # 右上角点击跳转的链接
+
+extra:
+  palette:
+    primary: 'blue'
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+nav:
+  - 'Home': index.md
+  - 'People': people.md
+  - 'Publications': publications.md
+  - 'News': news.md
+  - 'Notes':
+    - '第零章 开始之前': book/main.md
+    - '第一章 常用工具':
+      - '01. 公共数据库': book/1.Raw_Data/01_database.md
+      - '02. 数据下载': book/1.Raw_Data/02_get-data.md
+      - '03. Entrez 工具': book/1.Raw_Data/03_entrez.md
+      - '04. Blast 比对': book/1.Raw_Data/04_blast.md
+      - '06. FastQC': book/1.Raw_Data/05_fastqc.md
+      - '06. Multiqc': book/1.Raw_Data/06_multiqc.md
+      - '07. SeqKit 工具': book/1.Raw_Data/07_seqkit.md
+      - '08. Trimmomatic 工具': book/1.Raw_Data/08_trimmomatic.md
+    - '第二章 组装与比对':
+      - '01. 基本比对流程': book/2.To_Genome/01_bwa-samtools-pipeline.md
+      - '02. 细菌基因组组装': book/2.To_Genome/02_bacteria-assembly.md
+    - '第三章 基因组注释':
+      - '01. Prokka 快速注释': book/3.Genome_Annotation/01_prokka.md
+      - '02. Eggnog 注释': book/3.Genome_Annotation/02_eggnog.md
+      - '03. SNP注释工具 snpEFF': book/3.Genome_Annotation/03_snpeff.md
+    - '有关集群':
+      - '01. 共享软件列表': book/Software/01_Software_list.md
+      - '02. 软件使用常见问题': book/Software/02_Software_questions.md    
+      - '03. 共享数据库列表': book/Database/01_Database_list.md
+      - '04. 数据库使用常见问题': book/Software/02_Database_questions.md
+  - 'Tutorial':
+    - 'Linux入门':
+      - '01. Linux 基本命令': tutorial/Linux/02_basic-cml.md
+      - '02. vim': tutorial/Linux/07_vim.md
+    - '常用编程语言':
+      - '01. Shell 脚本': tutorial/Programming/01_shell.md
+      - '02. Python 编程': tutorial/Programming/03_python.md
+      - '03. R 编程': tutorial/Programming/05_r.md
+      - '04. Perl 编程': tutorial/Programming/02_perl.md
+    - '数据文件格式':
+      - '01. fasta': tutorial/Format/01_fasta.md
+      - '02. embl': tutorial/Format/02_embl.md
+      - '03. fastq': tutorial/Format/05_fastq.md
+      - '04. gcg': tutorial/Format/04_gcg.md
+      - '05. sam': tutorial/Format/05_sam.md
+      - '06. bam': tutorial/Format/06_bam.md
+      - '07. bed': tutorial/Format/07_bed.md
+      - '08. vcf': tutorial/Format/08_vcf.md
+      - '09. gff': tutorial/Format/09_gff.md
+use_directory_urls: true
+
+extra_javascript:
+  #- https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js
+  - assets/js/umlconvert.js
+
+markdown_extensions:
+  - codehilite
+  - admonition
+  - footnotes
+  - meta
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.details
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.keys
+  - pymdownx.emoji:
+  #    emoji_index: !!python/name:material.extensions.emoji.twemoji
+   #   emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+#          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.progressbar
+
+#google_analytics: ['UA-55420348-3', 'auto']
+
+plugins:
+  - search
+#  - git-authors
+#  - git-revision-date
+#  - macros
