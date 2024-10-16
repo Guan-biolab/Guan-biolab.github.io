@@ -33,11 +33,11 @@ nav:
       - '01. 公共数据库': book/1.Raw_Data/01_database.md
       - '02. 数据下载': book/1.Raw_Data/02_get-data.md
       - '03. 常用下载工具详解-Entrez': book/1.Raw_Data/03_entrez.md
-      - '04. Blast 比对': book/1.Raw_Data/04_blast.md
-      - '06. FastQC': book/1.Raw_Data/05_fastqc.md
-      - '06. Multiqc': book/1.Raw_Data/06_multiqc.md
+      - '04. Blast 比对软件': book/1.Raw_Data/04_blast.md
+      - '05. FastQC质控软件': book/1.Raw_Data/05_fastqc.md
+     # - '06. Multiqc': book/1.Raw_Data/06_multiqc.md
       - '07. SeqKit 工具': book/1.Raw_Data/07_seqkit.md
-      - '08. Trimmomatic 工具': book/1.Raw_Data/08_trimmomatic.md
+     # - '08. Trimmomatic 工具': book/1.Raw_Data/08_trimmomatic.md
     - '第二章 组装与比对':
       - '01. 基本比对流程': book/2.To_Genome/01_bwa-samtools-pipeline.md
       - '02. 细菌基因组组装': book/2.To_Genome/02_bacteria-assembly.md
