@@ -538,27 +538,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/Software/parallel.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    例00. parallel并行工具
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../book/1.Raw_Data/01_database/" class="md-nav__link">
         
   
@@ -648,6 +627,27 @@
   
   <span class="md-ellipsis">
     05. FastQC质控软件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/tools/parallel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. parallel并行工具
   </span>
   
 
@@ -1810,35 +1810,35 @@
 <hr />
 <h6 id="20241016">更新时间：20241016<a class="headerlink" href="#20241016" title="Permanent link">&para;</a></h6>
 <p>#test.sh</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="se">\#</span>!/bin/bash
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="se">\#</span>SBATCH<span class="w"> </span>-J<span class="w"> </span>name<span class="w">        </span><span class="c1">#指定作业名称name</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#SBATCH -J name        #指定作业名称name</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="se">\#</span>SBATCH<span class="w"> </span>-o<span class="w"> </span>%j.out<span class="w">       </span><span class="c1">#指定使用作业号作为作业标准输出文件的名称</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">#SBATCH -o %j.out       #指定使用作业号作为作业标准输出文件的名称</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="se">\#</span>SBATCH<span class="w"> </span>-e<span class="w"> </span>%j.err<span class="w">       </span><span class="c1">#指定使用作业号作为作业标准错误输出文件的名称</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">#SBATCH -e %j.err       #指定使用作业号作为作业标准错误输出文件的名称</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="se">\#</span>SBATCH<span class="w"> </span>-D<span class="w"> </span>/platform_data/User/用户名/......<span class="w">   </span>**#****指定工作目录**
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">#SBATCH -D /platform_data/User/用户名/......   **#指定工作目录</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="se">\#</span>SBATCH<span class="w"> </span>-p<span class="w"> </span>compute_nodes<span class="w">    </span><span class="c1">#指定分区名称 计算节点分区名compute_nodes，GPU节点分区名GPU_nodes</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">#SBATCH -p compute_nodes    #指定分区名称 计算节点分区名compute_nodes，GPU节点分区名GPU_nodes</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="se">\#</span>SBATCH<span class="w"> </span>-N<span class="w"> </span><span class="m">1</span><span class="w">          </span><span class="c1">#**指定节点数量****  （请先查看剩余可用节点及对应核。目前集群共5个计算节点，bioinfolab121，bioinfolab122,bioinfolab123,bioinfolab124,bioinfolab-training，前两个节点各开放80核，后两个节点各120核，培训节点150核。)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1">#SBATCH -N 1          #指定节点数量  （请先查看剩余可用节点及对应核。目前集群共5个计算节点，bioinfolab121，bioinfolab122,bioinfolab123,bioinfolab124,bioinfolab-training，前两个节点各开放80核，后两个节点各120核，培训节点150核。)</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="se">\#</span>SBATCH<span class="w"> </span>-n<span class="w"> </span><span class="m">60</span><span class="w">         </span><span class="c1">#**指定总核数****   （目前集群共550核，单用户使用请不要超过60核）</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1">#SBATCH -n 60         #指定总核数  （目前集群共550核，单用户使用请不要超过60核）</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="se">\#</span>SBATCH<span class="w"> </span>--mail-user<span class="o">=</span>......@...<span class="w"> </span><span class="c1">#指定通知邮箱地址 【可选用】</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1">#SBATCH --mail-user=......@... #指定通知邮箱地址 【可选用】</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="se">\#</span>SBATCH<span class="w"> </span>--mail-type<span class="o">=</span>END<span class="w">    </span><span class="c1">#通知类型，BEGIN作业开始通知，END作业结束通知，FAIL作业失败通知，ALL全类型通知 【可选用】</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1">#SBATCH --mail-type=END    #通知类型，BEGIN作业开始通知，END作业结束通知，FAIL作业失败通知，ALL全类型通知 【可选用】</span>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="se">\#</span>SBATCH<span class="w"> </span>--nodelist<span class="o">=</span>......<span class="w">   </span><span class="c1">#指定使用某节点 （例如，--nodelist=bioinfolab123)【暂可不做指定】</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1">#SBATCH --nodelist=......   #指定使用某节点 （例如，--nodelist=bioinfolab123)【暂可不做指定】</span>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="se">\#</span>SBATCH<span class="w"> </span>--exclude<span class="o">=</span>......<span class="w">    </span><span class="c1">#指定避免使用某节点 【暂可不做指定】</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="c1">#SBATCH --exclude=......    #指定避免使用某节点 【暂可不做指定】</span>
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="se">\#</span>SBATCH<span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>-12:00<span class="w">       </span><span class="c1">#运行总时间，天数-小时数-分钟，D-HH:MM 【暂可不做指定】</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1">#SBATCH -t 1-12:00       #运行总时间，天数-小时数-分钟，D-HH:MM 【暂可不做指定】</span>
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="se">\#</span>SBATCH<span class="w"> </span>--gres<span class="o">=</span>gpu:1<span class="w">    </span><span class="c1">#单用户可使用1块GPU卡</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="c1">#SBATCH --gres=gpu:1    #单用户可使用1块GPU卡</span>
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="se">\#</span><span class="w"> </span>运行程序
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="c1"># 运行程序</span>
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w"> </span>......具体命令行<span class="w">  </span>*（注意命令行里使用的核数，要于上面申请的-n数量一致。）*
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="c1">###### 执行 sbatch 命令前，可先通过 [conda activate 环境名称] 先激活软件对应环境</span>
