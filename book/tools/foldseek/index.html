@@ -12,9 +12,13 @@
         <meta name="author" content="sandy">
       
       
-        <link rel="canonical" href="https://guan-biolab.github.io/tutorial/3.Slurm/Untitled/">
+        <link rel="canonical" href="https://guan-biolab.github.io/book/tools/foldseek/">
       
       
+        <link rel="prev" href="../eggNOG-Mapper/">
+      
+      
+        <link rel="next" href="../hmmer/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Untitled - 吉大一生物信息学实验室</title>
+        <title>04. foldseek - 吉大一生物信息学实验室</title>
       
     
     
@@ -73,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#foldseek" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Untitled
+              04. foldseek
             
           </span>
         </div>
@@ -250,11 +259,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../book/main/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../main/" class="md-tabs__link">
           
   
   Notes
@@ -278,7 +289,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../1.Software/01_Software_list/" class="md-tabs__link">
+        <a href="../../../tutorial/1.Software/01_Software_list/" class="md-tabs__link">
           
   
   Tutorial
@@ -421,25 +432,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -450,7 +466,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Notes
@@ -464,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/main/" class="md-nav__link">
+      <a href="../../main/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -490,17 +506,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -525,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/1.Raw_Data/01_database/" class="md-nav__link">
+      <a href="../../1.Raw_Data/01_database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -546,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/1.Raw_Data/02_get-data/" class="md-nav__link">
+      <a href="../../1.Raw_Data/02_get-data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -567,7 +586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/1.Raw_Data/03_entrez/" class="md-nav__link">
+      <a href="../../1.Raw_Data/03_entrez/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -588,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/1.Raw_Data/04_blast/" class="md-nav__link">
+      <a href="../../1.Raw_Data/04_blast/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -609,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/1.Raw_Data/05_fastqc/" class="md-nav__link">
+      <a href="../../1.Raw_Data/05_fastqc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -630,32 +649,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/tools/parallel/" class="md-nav__link">
+      <a href="../../1.Raw_Data/07_seqkit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    06. parallel并行工具
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../book/1.Raw_Data/07_seqkit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    07. SeqKit 工具
+    06. SeqKit 工具
   </span>
   
 
@@ -685,17 +683,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -720,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/2.To_Genome/01_bwa-samtools-pipeline/" class="md-nav__link">
+      <a href="../../2.To_Genome/01_bwa-samtools-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -741,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/2.To_Genome/02_bacteria-assembly/" class="md-nav__link">
+      <a href="../../2.To_Genome/02_bacteria-assembly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -775,17 +776,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -810,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/3.Genome_Annotation/01_prokka/" class="md-nav__link">
+      <a href="../../3.Genome_Annotation/01_prokka/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -831,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/3.Genome_Annotation/02_eggnog/" class="md-nav__link">
+      <a href="../../3.Genome_Annotation/02_eggnog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -852,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/3.Genome_Annotation/03_snpeff/" class="md-nav__link">
+      <a href="../../3.Genome_Annotation/03_snpeff/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -886,17 +890,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -921,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/4.Genome_Visualization/01_igv/" class="md-nav__link">
+      <a href="../../4.Genome_Visualization/01_igv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -942,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/4.Genome_Visualization/03_circos/" class="md-nav__link">
+      <a href="../../4.Genome_Visualization/03_circos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -963,11 +970,85 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/4.Genome_Visualization/03_clinker/" class="md-nav__link">
+      <a href="../../4.Genome_Visualization/03_clinker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     03. clinker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    第五章 各种软件数据库组内分享
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            第五章 各种软件数据库组内分享
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. alphafold2
   </span>
   
 
@@ -984,11 +1065,165 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../book/tools/p/" class="md-nav__link">
+      <a href="../defense-finder/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    04. 待......
+    02. defense-finder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eggNOG-Mapper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. eggNOG-Mapper
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    04. foldseek
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    04. foldseek
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#20241018" class="md-nav__link">
+    <span class="md-ellipsis">
+      更新时间：20241018
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hmmer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. hmmer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mmv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. mmv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parallel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. parallel
   </span>
   
 
@@ -1100,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../1.Software/01_Software_list/" class="md-nav__link">
+      <a href="../../../tutorial/1.Software/01_Software_list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1121,7 +1356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../1.Software/02_Software_questions/" class="md-nav__link">
+      <a href="../../../tutorial/1.Software/02_Software_questions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1142,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.Database/01_Database_list/" class="md-nav__link">
+      <a href="../../../tutorial/2.Database/01_Database_list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1163,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.Database/02_Database_questions/" class="md-nav__link">
+      <a href="../../../tutorial/2.Database/02_Database_questions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1184,7 +1419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sbatch/" class="md-nav__link">
+      <a href="../../../tutorial/3.Slurm/sbatch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1205,11 +1440,74 @@
   
   
     <li class="md-nav__item">
-      <a href="../x.md" class="md-nav__link">
+      <a href="../../../tutorial/3.Slurm/slurm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    06. ......
+    06. slurm简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorial/3.Slurm/sinfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. 显示队列、节点信息:sinfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorial/3.Slurm/squeue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08. 查看队列中的作业信息:squeue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorial/3.Slurm/scontrol_show_job/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    09. 查看详细作业信息:scontrol show job
   </span>
   
 
@@ -1274,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/02_basic-cml/" class="md-nav__link">
+      <a href="../../../tutorial/Linux/02_basic-cml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1295,7 +1593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/07_vim/" class="md-nav__link">
+      <a href="../../../tutorial/Linux/07_vim/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1364,7 +1662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming/01_shell/" class="md-nav__link">
+      <a href="../../../tutorial/Programming/01_shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1385,7 +1683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming/03_python/" class="md-nav__link">
+      <a href="../../../tutorial/Programming/03_python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1406,7 +1704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming/05_r/" class="md-nav__link">
+      <a href="../../../tutorial/Programming/05_r/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1427,7 +1725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming/02_perl/" class="md-nav__link">
+      <a href="../../../tutorial/Programming/02_perl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1496,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Format/01_fasta/" class="md-nav__link">
+      <a href="../../../tutorial/Format/01_fasta/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1517,7 +1815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Format/02_embl/" class="md-nav__link">
+      <a href="../../../tutorial/Format/02_embl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1538,7 +1836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Format/05_fastq.md" class="md-nav__link">
+      <a href="../../../tutorial/Format/05_fastq.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1559,7 +1857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Format/04_gcg/" class="md-nav__link">
+      <a href="../../../tutorial/Format/04_gcg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1580,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Format/05_sam/" class="md-nav__link">
+      <a href="../../../tutorial/Format/05_sam/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1601,7 +1899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Format/06_bam/" class="md-nav__link">
+      <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1622,7 +1920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Format/07_bed/" class="md-nav__link">
+      <a href="../../../tutorial/Format/07_bed/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1643,7 +1941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Format/08_vcf/" class="md-nav__link">
+      <a href="../../../tutorial/Format/08_vcf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1664,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Format/09_gff/" class="md-nav__link">
+      <a href="../../../tutorial/Format/09_gff/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1710,6 +2008,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#20241018" class="md-nav__link">
+    <span class="md-ellipsis">
+      更新时间：20241018
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1727,9 +2044,158 @@
   
 
 
-  <h1>Untitled</h1>
-
-
+<h1 id="foldseek">foldseek<a class="headerlink" href="#foldseek" title="Permanent link">&para;</a></h1>
+<p>分享者：乙文静</p>
+<hr />
+<h6 id="20241018">更新时间：20241018<a class="headerlink" href="#20241018" title="Permanent link">&para;</a></h6>
+<p>foldseek结果解析</p>
+<p>2024年9月26日</p>
+<p>11:16</p>
+<p>**安装：**conda install bioconda::foldseek</p>
+<p><strong>原理：</strong></p>
+<p>Foldseek 是一种用于快速比较蛋白质结构的工具，能够有效地评估不同蛋白质结构之间的相似性。Foldseek 提供了多个关键指标，包括 <strong>TM score</strong>、<strong>Fident</strong> 和 <strong>QCov</strong>，这些指标分别从不同角度反映了蛋白质结构对齐的质量和相似性。以下是这三个指标的详细解释及其相互关系和计算方法：</p>
+<p><strong>1. TM score**</strong>（模板建模分数）**</p>
+<p><strong>定义与意义：</strong></p>
+<ul>
+<li><strong>TM     score</strong> 是衡量两个蛋白质结构整体相似性的标准化分数，范围通常在 0 到 1 之间。值越接近     1，表示结构相似性越高。</li>
+<li>TM     score 考虑了蛋白质长度的影响，因此能够公平地比较不同长度的蛋白质结构。</li>
+</ul>
+<p><strong>计算方法：</strong> TM score 的计算基于对齐后对应残基之间的距离，公式如下：</p>
+<p>TM score=1Ltarget∑i=1L11+(did0)2\text{TM score} = \frac{1}{L_{\text{target}}} \sum_{i=1}^{L} \frac{1}{1 + \left(\frac{d_i}{d_0}\right)^2}TM score=Ltarget1i=1∑L1+(d0di)21</p>
+<p>其中：</p>
+<ul>
+<li>LLL     是对齐的残基数量。</li>
+<li>did_idi 是第 iii 个对应残基之间的距离。</li>
+<li>d0d_0d0 是一个归一化参数，通常取 1.2 Å，用于标准化距离。</li>
+<li>LtargetL_{\text{target}}Ltarget 是目标蛋白质的长度。</li>
+</ul>
+<p><strong>特点：</strong></p>
+<ul>
+<li>归一化处理使得 TM score 不受蛋白质长度影响，适用于不同长度蛋白质的比较。</li>
+<li>对于同源蛋白质，通常 TM score 高于 0.5 表示具有显著的结构相似性。</li>
+</ul>
+<p><strong>2. Fident**</strong>（Foldseek 序列同一性分数）**</p>
+<p><strong>定义与意义：</strong></p>
+<ul>
+<li><strong>Fident</strong> 表示在对齐区域内的序列同一性，即对齐部分中相同氨基酸残基的比例。</li>
+<li>它反映了在对齐过程中，序列层面的相似程度。</li>
+</ul>
+<p><strong>计算方法：</strong> Fident 的计算公式为：</p>
+<p>Fident=相同残基数量对齐残基总数×100%\text{Fident} = \frac{\text{相同残基数量}}{\text{对齐残基总数}} \times 100\%Fident=对齐残基总数相同残基数量×100%</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>Fident     关注序列层面的保守性，序列同一性高通常预示着结构上的相似性，但不绝对。</li>
+<li>在结构相似性高但序列同一性低的情况下，可能存在进化上不同路径但保留了相似结构的蛋白质。</li>
+</ul>
+<p><strong>3. QCov**</strong>（Query Coverage）**</p>
+<p><strong>定义与意义：</strong></p>
+<ul>
+<li><strong>QCov</strong> 表示查询蛋白质序列在对齐中的覆盖比例，即有多少比例的查询残基参与了对齐。</li>
+<li>它衡量了对齐过程中查询序列被覆盖的程度。</li>
+</ul>
+<p><strong>计算方法：</strong> QCov 的计算公式为：</p>
+<p>QCov=对齐中的查询残基数查询蛋白质总残基数×100%\text{QCov} = \frac{\text{对齐中的查询残基数}}{\text{查询蛋白质总残基数}} \times 100\%QCov=查询蛋白质总残基数对齐中的查询残基数×100%</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>高 QCov 表示大部分查询蛋白质序列被有效对齐，适用于全面评估结构相似性。</li>
+<li>低 QCov 可能意味着仅部分结构区域具有相似性，或存在局部相似性。</li>
+</ul>
+<p><strong>三者之间的关系与综合评估</strong></p>
+<ul>
+<li>
+<p><strong>互补性：</strong> TM score、Fident 和 QCov 分别从结构相似性、序列同一性和覆盖范围三个方面评估蛋白质对齐的质量，彼此互补。单一指标可能无法全面反映对齐质量，而结合三个指标可以提供更全面的评估。</p>
+</li>
+<li>
+<p><strong>关联性：</strong></p>
+</li>
+<li>
+<ul>
+<li>通常情况下，高 Fident 和高 QCov 会促使 TM score 也较高，因为更多的残基参与对齐且序列同一性高，往往意味着结构相似性较高。</li>
+</ul>
+</li>
+<li>然而，也存在例外情况，例如某些蛋白质可能在特定区域高度保守，导致 Fident 和 TM score 高，但整体 QCov 低，因为只有部分区域被对齐。</li>
+</ul>
+<p><strong>具体计算步骤</strong></p>
+<ol>
+<li><strong>结构对齐：</strong> 使用 Foldseek 对两个蛋白质结构进行快速对齐，找到最佳匹配的结构片段。</li>
+<li><strong>计算 TM score：</strong>     根据对齐后的残基对应位置，计算 TM score 以评估整体结构匹配度。</li>
+<li><strong>计算 Fident：</strong>     在对齐区域内统计相同的氨基酸残基数量，除以对齐区域的总残基数，得到 Fident。</li>
+<li><strong>计算 QCov：</strong>     统计参与对齐的查询蛋白质残基数，除以查询蛋白质的总残基数，得到 QCov。</li>
+</ol>
+<p><strong>应用与意义</strong></p>
+<ul>
+<li><strong>结构预测与验证：</strong> 在蛋白质结构预测中，Foldseek     通过这些指标帮助研究人员评估预测模型与已知结构的相似性，提高预测的可靠性。</li>
+<li><strong>功能推断：</strong> 高度结构相似的蛋白质通常具有相似的功能，通过这些指标可以辅助功能推断和蛋白质家族分类。</li>
+<li><strong>进化研究：</strong> 分析不同物种中蛋白质结构的保守性，理解蛋白质进化过程中的结构保留机制。</li>
+</ul>
+<p><strong>总结</strong></p>
+<p>TM score、Fident 和 QCov 是 Foldseek 中用于评估蛋白质结构对齐质量的三个重要指标。TM score 主要衡量结构相似性，Fident 关注序列同一性，QCov 则评估对齐覆盖范围。通过综合这三个指标，Foldseek 能够提供全面、准确的蛋白质结构比较结果，辅助生物信息学研究和实验设计。</p>
+<p><strong>使用：</strong></p>
+<p>1、建立搜索数据库：</p>
+<p>foldseek createdb ./df_alphafold_r/ known_ds_database</p>
+<p>2、检索未知数据</p>
+<p>foldseek easy-search known_ds_database pre_df_alphafold_r/ known_ds_database result_pre_known_df_foldseek_TM_score_id.tsv tmp/ --format-output "query,target,alntmscore,qtmscore,ttmscore,fident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits" --threads 100</p>
+<p>The default output fields are: query,target,fident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits but they can be customized with the --format-output option e.g., --format-output "query,target,qaln,taln" returns the query and target accessions and the pairwise alignments in tab-separated format. You can choose many different output columns.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Code</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td>Query sequence identifier</td>
+</tr>
+<tr>
+<td>target</td>
+<td>Target sequence identifier</td>
+</tr>
+<tr>
+<td>qca</td>
+<td>Calpha coordinates of the query</td>
+</tr>
+<tr>
+<td>tca</td>
+<td>Calpha coordinates of the target</td>
+</tr>
+<tr>
+<td>alntmscore</td>
+<td>TM-score of the alignment</td>
+</tr>
+<tr>
+<td>qtmscore</td>
+<td>TM-score normalized by the query length</td>
+</tr>
+<tr>
+<td>ttmscore</td>
+<td>TM-score normalized by the target length</td>
+</tr>
+<tr>
+<td>u</td>
+<td>Rotation matrix (computed to by TM-score)</td>
+</tr>
+<tr>
+<td>t</td>
+<td>Translation vector (computed to by TM-score)</td>
+</tr>
+<tr>
+<td>lddt</td>
+<td>Average LDDT of the alignment</td>
+</tr>
+<tr>
+<td>lddtfull</td>
+<td>LDDT per aligned position</td>
+</tr>
+<tr>
+<td>prob</td>
+<td>Estimated probability for query and target to be homologous  (e.g. being within the same SCOPe superfamily)</td>
+</tr>
+</tbody>
+</table>
+<p>3、生成网页版的结果</p>
+<p>foldseek easy-search known_ds_database pre_df_alphafold_r/ result.html tmp1 --format-mode 3</p>
 
 
 
